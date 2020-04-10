@@ -1,0 +1,1 @@
+UPDATE rus SET workers='{"dmtr":"5/2"}' WHERE date_week='2020-04-01'; INSERT INTO rus (restaurant, date_week, workers) SELECT 'azmt','2020-04-01','{"qaz":"2/2"}' WHERE NOT EXISTS(SELECT 1 FROM rus WHERE date_week='2020-04-01');

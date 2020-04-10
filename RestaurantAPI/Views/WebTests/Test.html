@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="putRest()">put restaurant</button>
+<button onclick="deleteRest()">delete restaurant</button>
+
+<div>Workers:</div>
+<button onclick="putWorker()">put worker</button>
+
+</body>
+<script type="text/javascript">
+
+    function putWorker() {
+        fetch('http://localhost:5000/Workers',{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({FirstName:"jan pero",CoockType:"italy",Timetable:"5/2"})
+        }).then((data)=>{
+            return data
+        }).then((data)=>{
+            console.log(data)
+        })
+    }
+    
+    
+    function deleteRest() {
+        fetch('http://localhost:5000/Restaurants',{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({RestName:"ChotoVkysno"})
+        }).then((data)=>{
+            return data
+        }).then((data)=>{
+            console.log(data)
+        })
+    }
+
+    function putRest() {
+        fetch('http://localhost:5000/Restaurants',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({RestName:"ChotoVkysno"})
+        }).then((data)=>{
+            return data
+        }).then((data)=>{
+            console.log(data)
+        })
+    }
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\асеr\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\асеr\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\асеr\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\асеr\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RestaurantAPI.1587690997.00" t="ExcludeRecursive" />
+    <e p="C:\Users\асеr\RiderProjects\RestaurantAPI" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="RestaurantAPI" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="API.cs" t="Include" />
+          <e p="RedirectToVueApp" t="Include">
+            <e p="js.cs" t="Include" />
+            <e p="Redirector.cs" t="Include" />
+          </e>
+          <e p="Restaurants.cs" t="Include" />
+          <e p="Test.cs" t="Include" />
+          <e p="TimeTable.cs" t="Include" />
+          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="WebTests.cs" t="Include" />
+          <e p="WorkersController.cs" t="Include" />
+        </e>
+        <e p="Mock" t="Include">
+          <e p="dataStruct.json" t="Include" />
+          <e p="emptyStruct.json" t="Include" />
+          <e p="testsql" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Raspisanie.cs" t="Include" />
+          <e p="RaspisanieColumn.cs" t="Include" />
+          <e p="Restaurant.cs" t="Include" />
+          <e p="TableWorker.cs" t="Include" />
+          <e p="Worker.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="RestaurantAPI.AssemblyInfo.cs" t="Include" />
+              <e p="RestaurantAPI.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="otherClasses" t="Include">
+          <e p="Database" t="Include">
+            <e p="DataBase.cs" t="Include" />
+            <e p="DBTimeTable.cs" t="Include" />
+            <e p="DBWorkers.cs" t="Include" />
+          </e>
+          <e p="Tests.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="resourses" t="Include">
+          <e p="credentials.json" t="Include" />
+          <e p="Скриншот 24-03-2020 202049.jpg" t="Include" />
+        </e>
+        <e p="RestaurantAPI.csproj" t="IncludeRecursive" />
+        <e p="Startup.cs" t="Include" />
+        <e p="Views" t="Include">
+          <e p="Redirector" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="WebTests" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Test.html" t="Include" />
+          </e>
+        </e>
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="RestaurantAPI.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
