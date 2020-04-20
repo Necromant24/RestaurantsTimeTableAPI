@@ -26,6 +26,9 @@ namespace RestaurantAPI.Controllers
             var table = DataBase.DB.GetWorkersTable(
                 raspisanie.Date,raspisanie.DaysCount,
                 raspisanie.CoockType,raspisanie.Restaurant);
+            
+            
+            // TODO: ленивая жопа, возьми и отрефактори все, а то невозможно
 
             return Json(table);
         }

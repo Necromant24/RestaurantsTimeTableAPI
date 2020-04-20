@@ -43,7 +43,6 @@ namespace RestaurantAPI.otherClasses
             foreach (var key in list)
             {
                 var old = "@" + key;
-                Console.WriteLine(old);
                 sql = sql.Replace(old, param[key]);
             }
             

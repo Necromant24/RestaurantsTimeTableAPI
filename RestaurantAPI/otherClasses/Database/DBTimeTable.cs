@@ -15,9 +15,28 @@ namespace RestaurantAPI.otherClasses
             public string TimeTable;
             public string Name;
         }
+        
+        //delegate string[] weekForDate = delegate(string date) { };
+
+        IEnumerable<string> weekForDate(string date)
+        {
+            var startDate = DateTime.Parse(date);
+            for (int i = 0; i < 7; i++)
+            {
+                yield return reformatDate(startDate.AddDays(i).ToString());
+            }
+        }
 
         public dynamic GetWorkersTable(string date, int count, string typeCoock, string restaurant)
         {
+
+
+
+
+            var week = weekForDate(date).ToArray();
+            
+            
+            
             
             
             var dateWorkers = new Dictionary<string,WorkerTimeTable[]>();
@@ -75,8 +94,33 @@ namespace RestaurantAPI.otherClasses
                 
             }
 
+            Console.WriteLine(DateTime.Parse(date).ToString()+ " - is ref date raw");
+            Console.WriteLine(reformatDate(DateTime.Parse(date).ToString())+ " - is ref date");
+
+            for (int i = 0; i < 7; i++)
+            {
+                if (!column.ContainsKey(week[i]))
+                {
+                    column[week[i]]=new DateData(){WeekDay = DateTime.Parse(date).AddDays(i).Date.DayOfWeek.ToString(),Workers = new string[0]};
+                }
+            }
+            
+            
+
             return column;
         }
+
+        string reformatDate(string date)
+        {
+            var nums = date.Split(" ")[0].Trim();
+            var date2 = nums[6..10] + "-" + nums[3..5] + "-" + nums[0..2];
+            return date2;
+        }
+        
+        
+        
+        
+        
         
         public void AddWorkerInTable(string coockType,string restaurant,string date,string workers)
         {
