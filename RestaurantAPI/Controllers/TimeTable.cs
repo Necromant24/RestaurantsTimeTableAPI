@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestaurantAPI.Models;
@@ -27,7 +28,10 @@ namespace RestaurantAPI.Controllers
                 raspisanie.Date,raspisanie.DaysCount,
                 raspisanie.CoockType,raspisanie.Restaurant);
             
-            
+            Console.WriteLine(((Dictionary<string,DateData>)table).Keys.Count);
+            Console.WriteLine(" - dict count");
+
+
             // TODO: ленивая жопа, возьми и отрефактори все, а то невозможно
 
             return Json(table);

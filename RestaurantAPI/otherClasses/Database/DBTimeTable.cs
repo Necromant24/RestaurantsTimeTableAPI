@@ -77,6 +77,10 @@ namespace RestaurantAPI.otherClasses
                     reader.GetString(1);
             }
             
+            
+            Console.WriteLine(dateWorkersStr.Keys.Count);
+            Console.WriteLine(" - getted from sql");
+            
             reader.Close();
             
             Dictionary<string,Dictionary<string,string>> myVar = new Dictionary<string, Dictionary<string,string>>();
@@ -85,8 +89,8 @@ namespace RestaurantAPI.otherClasses
             
             foreach (var val in dateWorkersStr.Keys)
             {
-                Console.WriteLine(val);
-                Console.WriteLine(JsonConvert.DeserializeObject<Dictionary<string,string>>(dateWorkersStr[val]));
+                //Console.WriteLine(val);
+                //Console.WriteLine(JsonConvert.DeserializeObject<Dictionary<string,string>>(dateWorkersStr[val]));
                 var kv = JsonConvert.DeserializeObject<Dictionary<string, string>>(dateWorkersStr[val]);
                 myVar[val] = kv;
                 
@@ -94,8 +98,8 @@ namespace RestaurantAPI.otherClasses
                 
             }
 
-            Console.WriteLine(DateTime.Parse(date).ToString()+ " - is ref date raw");
-            Console.WriteLine(reformatDate(DateTime.Parse(date).ToString())+ " - is ref date");
+            //Console.WriteLine(DateTime.Parse(date).ToString()+ " - is ref date raw");
+            //Console.WriteLine(reformatDate(DateTime.Parse(date).ToString())+ " - is ref date");
 
             for (int i = 0; i < 7; i++)
             {
@@ -105,6 +109,9 @@ namespace RestaurantAPI.otherClasses
                 }
             }
             
+            
+            Console.WriteLine(column.Keys.Count);
+            Console.WriteLine(" - column count");
             
 
             return column;
