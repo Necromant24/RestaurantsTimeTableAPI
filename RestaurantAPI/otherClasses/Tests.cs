@@ -51,7 +51,7 @@ namespace RestaurantAPI.otherClasses
         }
 
         public static string testsql =
-            "UPDATE @coockType SET workers='@workers' WHERE date_week='@date' AND restaurant='@restaurant'; INSERT INTO rus (restaurant, date_week, workers) SELECT '@restaurant','@date','@workers' WHERE NOT EXISTS(SELECT 1 FROM rus WHERE date_week='@date');";
+            "UPDATE @coockType SET workers='@workers' WHERE date_week='@date' AND restaurant='@restaurant'; INSERT INTO @coockType (restaurant, date_week, workers) SELECT '@restaurant','@date','@workers' WHERE NOT EXISTS(SELECT 1 FROM @coockType WHERE date_week='@date' AND restaurant='@restaurant');";
 
         public static Dictionary<string,string> testParams = new Dictionary<string, string>()
         {

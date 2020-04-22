@@ -137,6 +137,7 @@ namespace RestaurantAPI.otherClasses
             Tests.myParams["coockType"] = coockType;
             
             var sql = Tests.CreateSQLStr(Tests.testsql, Tests.myParams);
+            Console.WriteLine(sql+ " -is created sql in add worker");
             cmd.CommandText = sql;
 
             cmd.Prepare();
