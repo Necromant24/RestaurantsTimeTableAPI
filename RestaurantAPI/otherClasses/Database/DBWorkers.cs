@@ -8,20 +8,24 @@ namespace RestaurantAPI.otherClasses
         
         public Worker[] GetAllWorkers()
         {
-            cmd.CommandText="SELECT first_name,timetable,coock_type FROM workers";
-            var reader = cmd.ExecuteReader();
             var workers = new List<Worker>();
-            while (reader.Read())
+            lock (cmd)
             {
-                workers.Add(new Worker()
+                cmd.CommandText = "SELECT first_name,timetable,coock_type FROM workers";
+                var reader = cmd.ExecuteReader();
+                
+                while (reader.Read())
                 {
-                    FirstName = reader.GetString(0),
-                    Timetable = reader.GetString(1),
-                    CoockType = reader.GetString(2)
-                });
+                    workers.Add(new Worker()
+                    {
+                        FirstName = reader.GetString(0),
+                        Timetable = reader.GetString(1),
+                        CoockType = reader.GetString(2)
+                    });
+                }
+
+                reader.Close();
             }
-            
-            reader.Close();
 
             return workers.ToArray();
         }

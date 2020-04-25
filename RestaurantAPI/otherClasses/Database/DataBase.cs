@@ -50,15 +50,20 @@ namespace RestaurantAPI.otherClasses
 
         public string[] GetAllRestaurants()
         {
-            cmd.CommandText="SELECT name FROM restaurants";
-            var reader = cmd.ExecuteReader();
             var restaurants = new List<string>();
-            while (reader.Read())
+            lock (cmd)
             {
-                restaurants.Add(reader.GetString(0));
+                
+                cmd.CommandText = "SELECT name FROM restaurants";
+                var reader = cmd.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    restaurants.Add(reader.GetString(0));
+                }
+
+                reader.Close();
             }
-            
-            reader.Close();
 
             return restaurants.ToArray();
         }

@@ -67,22 +67,26 @@ namespace RestaurantAPI.otherClasses
             
             Console.WriteLine(sql);
 
-            cmd.CommandText = sql;
-            cmd.Prepare();
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+
+            lock (this.cmd)
             {
-                
-                dateWorkersStr[reader.GetDate(0).ToString()] =
-                    reader.GetString(1);
+                cmd.CommandText = sql;
+                //cmd.Prepare();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    dateWorkersStr[reader.GetDate(0).ToString()] =
+                        reader.GetString(1);
+                }
+
+
+                Console.WriteLine(dateWorkersStr.Keys.Count);
+                Console.WriteLine(" - getted from sql");
+
+                reader.Close();
             }
-            
-            
-            Console.WriteLine(dateWorkersStr.Keys.Count);
-            Console.WriteLine(" - getted from sql");
-            
-            reader.Close();
-            
+
             Dictionary<string,Dictionary<string,string>> myVar = new Dictionary<string, Dictionary<string,string>>();
 
             Dictionary<string,DateData> column = new Dictionary<string, DateData>();
